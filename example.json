@@ -1,0 +1,10 @@
+{
+  "replicas": [
+    {"id": "a", "weight": 2, "datacenter": "dc-east", "online": true},
+    {"id": "b", "weight": 1, "datacenter": "dc-west", "online": true},
+    {"id": "c", "weight": 2, "datacenter": "dc-north", "online": true},
+    {"id": "d", "weight": 1, "datacenter": "dc-south", "online": false}
+  ],
+  "read": {"threshold": 3, "required_datacenters": ["dc-east", "dc-west"]},
+  "write": {"threshold": 3, "required_datacenters": ["dc-north", "dc-east"]}
+}

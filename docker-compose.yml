@@ -1,0 +1,14 @@
+services:
+  quorum:
+    build:
+      context: .
+    image: quorum-analyzer:latest
+    # Compose invokes the one-shot CLI and supplies the JSON through stdin:
+    #   docker compose run --rm -T quorum < example.json
+    stdin_open: true
+    init: true
+    read_only: true
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
